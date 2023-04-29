@@ -1,6 +1,6 @@
 package org.example;
 
-public class Complex {
+public class Complex extends Calculator{
     double x;
     double y;
     double i = Math.sqrt(-1);
@@ -14,35 +14,6 @@ public class Complex {
         this.y = y;
     }
 
-    public Complex addition(Complex otherComp){
-        newX = x + otherComp.getX();
-        newY = y + otherComp.getY();
-        newComp = new Complex(newX, newY);
-        return newComp;
-    }
-
-    public Complex substraction(Complex otherComp){
-        newX = x - otherComp.getX();
-        newY = y - otherComp.getY();
-        newComp = new Complex(newX, newY);
-        return newComp;
-    }
-
-    public Complex multiplication(Complex otherNumber){
-        newX = (x * otherNumber.getX()) - (y * otherNumber.getY());
-        newY = (y * otherNumber.getX()) + (x * otherNumber.getY());
-        newComp = new Complex(newX, newY);
-        return newComp;
-    }
-
-    public Complex division(Complex otherNumber) {
-        newX = ((x * otherNumber.getX()) + (y * otherNumber.getY())) / ((otherNumber.getX() *
-                otherNumber.getX()) + (otherNumber.getY() * otherNumber.getY()));
-        newY = ((y * otherNumber.getX()) - (x * otherNumber.getY())) / ((otherNumber.getX() *
-                otherNumber.getX()) + (otherNumber.getY() * otherNumber.getY()));
-        newComp = new Complex(newX, newY);
-        return newComp;
-    }
 
     public double getX() {
         return x;
@@ -68,5 +39,59 @@ public class Complex {
     @Override
     public String toString() {
         return  x + " + " + y + "i";
+    }
+
+    @Override
+    public void addition(double otherNumber) {
+
+    }
+
+    @Override
+    public void additionComp(Complex otherComp) {
+        newX = x + otherComp.getX();
+        newY = y + otherComp.getY();
+        newComp = new Complex(newX, newY);
+        System.out.println(newComp);
+    }
+
+    @Override
+    public void subtraction(double otherNumber) {
+
+    }
+
+    @Override
+    public void subtractionComp(Complex otherComp) {
+        newX = x - otherComp.getX();
+        newY = y - otherComp.getY();
+        newComp = new Complex(newX, newY);
+        System.out.println(newComp);
+    }
+
+    @Override
+    public void division(double otherNumber) {
+
+    }
+
+    @Override
+    public void divisionComp(Complex otherComp) {
+        newX = ((x * otherComp.getX()) + (y * otherComp.getY())) / ((otherComp.getX() *
+                otherComp.getX()) + (otherComp.getY() * otherComp.getY()));
+        newY = ((y * otherComp.getX()) - (x * otherComp.getY())) / ((otherComp.getX() *
+                otherComp.getX()) + (otherComp.getY() * otherComp.getY()));
+        newComp = new Complex(newX, newY);
+        System.out.println(newComp);
+    }
+
+    @Override
+    public void multiplication(double otherNumber) {
+
+    }
+
+    @Override
+    public void multiplicationComp(Complex otherComp) {
+        newX = (x * otherComp.getX()) - (y * otherComp.getY());
+        newY = (y * otherComp.getX()) + (x * otherComp.getY());
+        newComp = new Complex(newX, newY);
+        System.out.println(newComp);
     }
 }

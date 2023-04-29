@@ -38,16 +38,16 @@ public class Main {
 
                 switch (x) {
                     case ('1'):
-                        System.out.println(Rational.addition(a1.getRational(), a2.getRational()));
+                        a1.addition(a2.getRational());
                         break;
                     case ('2'):
-                        System.out.println(Rational.substraction(a1.getRational(), a2.getRational()));
+                        a1.subtraction(a2.getRational());
                         break;
                     case ('3'):
-                        System.out.println(Rational.multiplication(a1.getRational(), a2.getRational()));
+                        a1.multiplication(a2.getRational());
                         break;
                     case ('4'):
-                        System.out.println(Rational.divison(a1.getRational(), a2.getRational()));
+                        a1.division(a2.getRational());
                         break;
                 }
             }
@@ -73,16 +73,20 @@ public class Main {
 
                 switch (x) {
                     case ('1'):
-                        System.out.println("result = " + a.addition(b));
+                        System.out.println("result = ");
+                        a.additionComp(b);
                         break;
                     case ('2'):
-                        System.out.println("result = " + a.substraction(b));
+                        System.out.println("result = ");
+                        a.subtractionComp(b);
                         break;
                     case ('3'):
-                        System.out.println("result = " + a.multiplication(b));
+                        System.out.println("result = ");
+                        a.multiplicationComp(b);
                         break;
                     case ('4'):
-                        System.out.println("result = " + a.division(b));
+                        System.out.println("result = ");
+                        a.divisionComp(b);
                         break;
                 }
             }
