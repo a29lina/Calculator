@@ -20,16 +20,11 @@ public class Main {
 
         try {
 
-            System.out.println("Для работы с рациональными числами введите 1");
-            System.out.println("Для работы с комплексными числами введите 2");
+            Menu.menuGeneral();
             char var = iScanner.next().charAt(0);
 
             if (var == '1') {
-                System.out.println("Если хотите использовать сложение, введите 1");
-                System.out.println("Если хотите использовать вычитание, введите 2");
-                System.out.println("Если хотите использовать умножение, введите 3");
-                System.out.println("Если хотите использовать деление, введите 4");
-
+                Menu.menu();
                 char x = iScanner.next().charAt(0);
                 System.out.printf("Введите первое число: ");
                 Rational a1 = new Rational(iScanner.nextDouble());
@@ -38,25 +33,24 @@ public class Main {
 
                 switch (x) {
                     case ('1'):
-                        a1.addition(a2.getRational());
+                        a1.addition(a2.getX());
                         break;
                     case ('2'):
-                        a1.subtraction(a2.getRational());
+                        a1.subtraction(a2.getX());
                         break;
                     case ('3'):
-                        a1.multiplication(a2.getRational());
+                        a1.multiplication(a2.getX());
                         break;
                     case ('4'):
-                        a1.division(a2.getRational());
+                        a1.division(a2.getX());
                         break;
+                    default:
+                        System.out.println("Нет такого варианта");
                 }
             }
 
-            if (var == '2') {
-                System.out.println("Если хотите использовать сложение, введите 1");
-                System.out.println("Если хотите использовать вычитание, введите 2");
-                System.out.println("Если хотите использовать умножение, введите 3");
-                System.out.println("Если хотите использовать деление, введите 4");
+            else if (var == '2') {
+                Menu.menu();
                 char x = iScanner.next().charAt(0);
 
                 System.out.println("Введите X для первого комплексного числа : ");
@@ -88,12 +82,16 @@ public class Main {
                         System.out.println("result = ");
                         a.divisionComp(b);
                         break;
+                    default:
+                        System.out.println("Нет такого варианта");
                 }
+            }
+            else {
+                System.out.println("Нет такого варианта");
             }
             logger.log(Level.INFO, "Everything is fine");
         } catch (Exception e) {
             logger.log(Level.WARNING, "!!!");
         }
-
     }
 }
