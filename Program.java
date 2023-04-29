@@ -8,9 +8,9 @@ import java.util.logging.Logger;
 import java.util.logging.XMLFormatter;
 
 
-public class Main {
+public class Program {
     public static void main(String[] args) throws IOException {
-        Logger logger = Logger.getLogger(Main.class.getName());
+        Logger logger = Logger.getLogger(Program.class.getName());
         FileHandler fh = new FileHandler("log.xml", true);
         logger.addHandler(fh);
         XMLFormatter xml = new XMLFormatter();
@@ -45,7 +45,7 @@ public class Main {
                         a1.division(a2.getX());
                         break;
                     default:
-                        System.out.println("Нет такого варианта");
+                        System.out.println("Нет такого варианта в меню!");
                 }
             }
 
@@ -83,11 +83,11 @@ public class Main {
                         a.divisionComp(b);
                         break;
                     default:
-                        System.out.println("Нет такого варианта");
+                        System.out.println("Нет такого варианта в меню!");
                 }
             }
             else {
-                System.out.println("Нет такого варианта");
+                System.out.println("Нет такого варианта в меню!");
             }
             logger.log(Level.INFO, "Everything is fine");
         } catch (Exception e) {
