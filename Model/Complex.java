@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Model;
 
 public class Complex extends Calculator{
 
@@ -20,8 +20,8 @@ public class Complex extends Calculator{
     public void additionComp(Complex otherComp) {
         newX = x + otherComp.getX();
         newY = y + otherComp.getY();
-        newComp = new Complex(newX, newY);
-        System.out.println(newComp);
+        newComp = new Complex(Math.round(newX), Math.round(newY));
+        System.out.println("result = " + newComp);
     }
 
 
@@ -29,7 +29,7 @@ public class Complex extends Calculator{
         newX = x - otherComp.getX();
         newY = y - otherComp.getY();
         newComp = new Complex(newX, newY);
-        System.out.println(newComp);
+        System.out.println("result = " + newComp);
     }
 
 
@@ -39,7 +39,7 @@ public class Complex extends Calculator{
         newY = ((y * otherComp.getX()) - (x * otherComp.getY())) / ((otherComp.getX() *
                 otherComp.getX()) + (otherComp.getY() * otherComp.getY()));
         newComp = new Complex(newX, newY);
-        System.out.println(newComp);
+        System.out.println("result = " + newComp);
     }
 
 
@@ -47,6 +47,6 @@ public class Complex extends Calculator{
         newX = (x * otherComp.getX()) - (y * otherComp.getY());
         newY = (y * otherComp.getX()) + (x * otherComp.getY());
         newComp = new Complex(newX, newY);
-        System.out.println(newComp);
+        System.out.println("result = " + newComp);
     }
 }

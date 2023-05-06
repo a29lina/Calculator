@@ -1,4 +1,8 @@
-package org.example;
+package org.example.Controller;
+
+import org.example.Model.Complex;
+import org.example.Model.Rational;
+import org.example.View.Menu;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -18,13 +22,15 @@ public class Program {
 
         Scanner iScanner = new Scanner(System.in);
 
+        Menu m1 = new Menu();
+
         try {
 
             Menu.menuGeneral();
             char var = iScanner.next().charAt(0);
 
             if (var == '1') {
-                Menu.menu();
+                Menu.menuRational();
                 char x = iScanner.next().charAt(0);
                 System.out.printf("Введите первое число: ");
                 Rational a1 = new Rational(iScanner.nextDouble());
@@ -44,13 +50,16 @@ public class Program {
                     case ('4'):
                         a1.division(a2.getX());
                         break;
+                    case ('5'):
+                        a1.power(a2.getX());
+                        break;
                     default:
                         System.out.println("Нет такого варианта в меню!");
                 }
             }
 
             else if (var == '2') {
-                Menu.menu();
+                Menu.menuComplex();
                 char x = iScanner.next().charAt(0);
 
                 System.out.println("Введите X для первого комплексного числа : ");
@@ -67,19 +76,15 @@ public class Program {
 
                 switch (x) {
                     case ('1'):
-                        System.out.println("result = ");
                         a.additionComp(b);
                         break;
                     case ('2'):
-                        System.out.println("result = ");
                         a.subtractionComp(b);
                         break;
                     case ('3'):
-                        System.out.println("result = ");
                         a.multiplicationComp(b);
                         break;
                     case ('4'):
-                        System.out.println("result = ");
                         a.divisionComp(b);
                         break;
                     default:
